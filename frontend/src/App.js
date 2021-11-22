@@ -3,6 +3,7 @@ import {Route, Switch,BrowserRouter } from 'react-router-dom';
 import {VaccineRegistration} from './containers/VaccineRegistration/VaccineRegistration';
 import {VaccineRegistrationListing} from './containers/VaccineRegistration/ListVaccinationBooking';
 import {EditVaccineRegistration} from './containers/VaccineRegistration/EditVaccinationBooking';
+
 import { NavBar } from './containers/Nav';
 import { Component } from 'react';
 import AdapterDateFns from '@mui/lab/AdapterDayjs';
@@ -18,8 +19,8 @@ class App extends Component {
         <BrowserRouter>
             <NavBar />
             <Switch>
-              <Route path="/bookings" exact component={VaccineRegistrationListing} />
-              <Route path="/bookings/:bookingId" exact component={EditVaccineRegistration} />
+              <Route path="/booking" exact component={VaccineRegistrationListing} />
+              <Route path="/booking/:id" exact component={EditVaccineRegistration} />
               <Route path="/" exact component={VaccineRegistration} />
             </Switch>
         </BrowserRouter>
