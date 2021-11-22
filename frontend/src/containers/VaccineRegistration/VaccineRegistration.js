@@ -123,7 +123,7 @@ export class VaccineRegistration extends Component {
           if (error.response) {
             toast.error(error.response.data.error)
           } else {
-            toast.error(error.message)
+            toast.error(error)
           }
         })
         .finally(() => {

@@ -33,7 +33,7 @@ router.route('/update/:id').post((req, res) => {
 			vaccination_center.address = req.body.address;
 			vaccination_center.vaccine_type = Number(req.body.vaccine_type);
 
-			exercise.save()
+			vaccination_center.save()
 				.then(() => res.json('Vaccination Center updated!'))
 				.catch(err => res.status(400).json('Error: ' + err));
 		})

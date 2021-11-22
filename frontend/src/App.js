@@ -4,6 +4,9 @@ import {VaccineRegistration} from './containers/VaccineRegistration/VaccineRegis
 import {VaccineRegistrationListing} from './containers/VaccineRegistration/ListVaccinationBooking';
 import {EditVaccineRegistration} from './containers/VaccineRegistration/EditVaccinationBooking';
 
+import {VaccinationCenterListing} from './containers/VaccinationCenter/ListVaccinationCenter';
+import {NurseListing} from './containers/Nurse/ListNurse';
+
 import { NavBar } from './containers/Nav';
 import { Component } from 'react';
 import AdapterDateFns from '@mui/lab/AdapterDayjs';
@@ -22,6 +25,9 @@ class App extends Component {
               <Route path="/booking" exact component={VaccineRegistrationListing} />
               <Route path="/booking/:id" exact component={EditVaccineRegistration} />
               <Route path="/" exact component={VaccineRegistration} />
+
+              <Route path="/vaccination_center" exact component={VaccinationCenterListing} />
+              <Route path="/nurse" exact component={NurseListing} />
             </Switch>
         </BrowserRouter>
       </LocalizationProvider>

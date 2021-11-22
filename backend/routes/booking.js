@@ -50,7 +50,7 @@ router.route('/add').post((req, res) => {
 	})
 	.then(booking => {
 		if(booking){
-			res.status(400).json({error: "Duplicate reservation! Your reservation has been booked for "+moment(props.booking.booking_date).format('YYYY-MM-DD LT')})
+			res.status(400).json({error: "Duplicate reservation! Your reservation has been booked for "+moment(req.body.date).format('YYYY-MM-DD LT')})
 		} else {			
 			//Check if vaccination center has slots
 			hasVaccinationSlot(vaccination_center, booking_date).then(data => {
@@ -68,7 +68,7 @@ router.route('/add').post((req, res) => {
 					res.status(400).json('Error: ' + err)
 				});
 			}).catch((er) => {
-				res.status(400).json('Vaccination slots not available on selected center and date/time, please try choose different timing or center.')
+				res.status(400).json({error: 'Vaccination slots not available on selected center and date/time, please try choose different timing or center.'})
 			})
 		}
 	})
